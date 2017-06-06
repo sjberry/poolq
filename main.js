@@ -1,6 +1,4 @@
 'use strict';
 
 
-module.exports = {
-	Pool: require('./lib/pool')
-};
+module.exports = require('./lib/pool');

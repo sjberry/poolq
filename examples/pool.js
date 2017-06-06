@@ -1,19 +1,15 @@
 'use strict';
 
-const Pool = require('poolq').Pool;
+const Pool = require('../main');
 
 
 let pool = new Pool({
-	max: 2,
-	create: function() {
-		if (Math.random() > 0.75) {
-			throw new Error('Error probability exceeded');
-		}
-
-		return {
-			date: new Date()
-		};
-	}
+	max: 2//,
+	// create: function() {
+	// 	return {
+	// 		date: new Date()
+	// 	};
+	// }
 });
 
 setInterval(function() {
@@ -25,7 +21,7 @@ for (let i = 0; i < 15; i++) {
 		.then(function(obj) {
 			let expiration = (5000 * Math.random() + 3000) | 0;
 
-			console.log(obj, expiration + 'ms');
+			console.log(obj, 'Expiration: ' + expiration + 'ms');
 
 			setTimeout(function() {
 				pool.release(obj);
@@ -35,6 +31,11 @@ for (let i = 0; i < 15; i++) {
 			console.log(err);
 		});
 }
+
+pool.drain()
+	.then(function() {
+		console.log('Drained.');
+	});
 
 setTimeout(function() {
 	pool.max = 10;

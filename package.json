@@ -5,10 +5,7 @@
   "license": "MIT",
   "main": "main",
   "dependencies": {
-    "bluebird": "^3.3.5",
-    "js-priority-queue": "^0.1.5",
-    "lodash": "^4.12.0",
-    "node-noop": "^1.0.0"
+    "js-priority-queue": "^0.1.5"
   },
   "devDependencies": {
     "chai": "^4.0.2",
