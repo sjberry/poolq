@@ -1,0 +1,8 @@
+dist/
+examples/
+node_modules/
+test/
+.gitignore
+.npmignore
+eslint.json
+gulpfile.js
