@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable no-console */
+
 const Pool = require('../main');
 
 
@@ -35,6 +37,8 @@ for (let i = 0; i < 15; i++) {
 pool.drain()
 	.then(function() {
 		console.log('Drained.');
+
+		return pool.resume();
 	});
 
 setTimeout(function() {

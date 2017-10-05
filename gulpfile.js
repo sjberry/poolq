@@ -31,19 +31,33 @@ gulp.task('clean', function() {
 });
 
 
-gulp.task('lint', ['lint:js', 'lint:json']);
+gulp.task('lint', ['lint:js:src', 'lint:js:test', 'lint:json']);
 
 
-gulp.task('lint:js', function() {
+gulp.task('lint:js:src', function() {
 	const eslint = require('gulp-eslint');
 
 	return gulp.src([
-		'*.js',
-		'lib/**/*.js',
-		'test/**/*.js'
+		'main.js',
+		'examples/**/*.js',
+		'lib/**/*.js'
 	])
 		.pipe(eslint({
 			configFile: 'eslint.json'
+		}))
+		.pipe(eslint.formatEach());
+});
+
+
+gulp.task('lint:js:test', function() {
+	const eslint = require('gulp-eslint');
+
+	return gulp.src([
+		'gulpfile.js',
+		'test/**/*.js'
+	])
+		.pipe(eslint({
+			configFile: 'eslint.2017.json'
 		}))
 		.pipe(eslint.formatEach());
 });

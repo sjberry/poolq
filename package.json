@@ -1,28 +1,26 @@
 {
   "name": "poolq",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Steven Berry",
   "license": "MIT",
   "main": "main",
   "dependencies": {
+    "deferred-ap": "^0.1.0",
     "js-priority-queue": "^0.1.5"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
-    "chai-as-promised": "^6.0.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
-    "gulp-eslint": "^3.0.1",
+    "gulp-eslint": "^4.0.0",
     "gulp-gzip": "^1.4.0",
     "gulp-jsonlint": "^1.2.0",
     "gulp-mocha": "^4.3.1",
-    "gulp-read": "0.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-tar": "^1.9.0",
-    "mocha": "^3.4.2",
-    "proxyquire": "^1.8.0",
-    "run-sequence": "^1.2.2",
-    "sinon": "^2.3.2",
-    "sinon-chai": "^2.10.0"
+    "gulp-tar": "^2.0.0",
+    "run-sequence": "^2.2.0",
+    "sinon": "^4.0.0",
+    "sinon-chai": "^2.13.0"
   }
 }
