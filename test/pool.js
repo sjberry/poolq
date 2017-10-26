@@ -151,6 +151,31 @@ describe('Pool', function() {
 			});
 		});
 
+		describe('state', function() {
+			it('should indicate the current state of the pool when active', function() {
+				let pool = new Pool();
+
+				expect(pool.state).to.equal(Pool.states.ACTIVE);
+			});
+
+			it('should indicate the current state of the pool when inactive', async function() {
+				let pool = new Pool();
+
+				await pool.drain();
+
+				expect(pool.state).to.equal(Pool.states.INACTIVE);
+			});
+
+			it('should indicate the current state of the pool when draining', async function() {
+				let pool = new Pool();
+
+				await pool.acquire();
+				pool.drain();
+
+				expect(pool.state).to.equal(Pool.states.DRAINING);
+			});
+		});
+
 		describe('waiting', function() {
 			it('should indicate the number of pending acquisition requests', async function() {
 				const MAX = 1;

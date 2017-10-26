@@ -1,7 +1,13 @@
 {
   "name": "poolq",
-  "version": "0.3.2",
-  "author": "Steven Berry",
+  "version": "0.4.0",
+  "description": "Basic task flow control for NodeJS.",
+  "keywords": ["pool", "queue", "tasks", "rate limit", "rate limiting", "concurrency", "concurrency control"],
+  "author": "Steven Berry <steven@sberry.me",
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/sjberry/poolq.git"
+  },
   "license": "MIT",
   "main": "main",
   "dependencies": {

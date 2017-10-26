@@ -174,7 +174,12 @@ This property indicates whether the `Pool` instance is currently draining.
 While the number of _pending_ work slots is ostensibly unbounded, there is an established limit on maximum number of concurrent slots that will be resolved via `.acquire()`.
 The `max` property can be set dynamically on an active `Pool` instance and work slots will be issued as appropriate.
 Reducing the `max` below the current `count` will not affect the slots already issued but will prevent additional slots from being issued until enough slots have been returned such that `count < max`.
- 
+
+>**state** _String_ _readonly_ The current state of the pool.
+
+A `Pool` instance can have a few different states depending on whether or not it has been drained, resumed, etc.
+The possible states are accessible as enumerated constants in `Pool.states`.
+
 >**waiting** _Number_ _readonly_ The current number of pending, requested work slots.
 
 When the number of requested work slots exceeds the concurrency stipulated by the `max` property they are relegated to a queue.
